@@ -1,0 +1,29 @@
+{
+  "nextCycleId": 1,
+  "cycle": [
+    {
+      "id": 1,
+      "type": "roll",
+      "endTimerAt": "21:00",
+      "minimumPiston": 0.005
+    },
+    {
+      "id": 2,
+      "type": "roll",
+      "endTimerAt": "21:00",
+      "minimumPiston": 0.005
+    },
+    {
+      "id": 3,
+      "type": "roll",
+      "endTimerAt": "21:00",
+      "minimumPiston": 0.005
+    },
+    {
+      "id": 4,
+      "type": "claim",
+      "endTimerAt": "21:00",
+      "minimumPiston": 0.005
+    }
+  ]
+}
