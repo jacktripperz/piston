@@ -141,8 +141,8 @@ def itterate(nextCycleId, nextCycleType):
         if nextCycleType == "roll":
             print("********** ROLLED *******")
             print(f"{timestampStr} rolled {payoutToroll:.8f} PISTON to the pool!")
-        if nextCycleType == "CLAIMED":
-            print("********** WITHDREW *********")
+        if nextCycleType == "claim":
+            print("********** CLAIMED *********")
             print(f"{timestampStr} Withdrew {payoutToroll:.8f} PISTON!")
 
         calculatedNextCycleId = calcNextCycleId(nextCycleId)
