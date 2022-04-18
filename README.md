@@ -1,9 +1,8 @@
-# My DiamondTeam v2 Intro
+# Piston Intro
 
-The "My DiamondTeam v2", or for short MDVT, is a deflationary daily ROI platform that allows
-you to earn up to 1.5% daily return on your investment sustainably through a tax system
-on transactions. It also allows team building through a referral system, and most
-importantly, compound interest AND 5% bonus on each re-invest of your rewards. 
+The "Piston", is a deflationary daily ROI platform that allows
+you to earn up to 1% daily return on your investment sustainably through a tax system
+on transactions. It also allows team building Pit Crews through a referral system. 
 
 ## Disclaimer
 Signing transactions via this script requires the use of a **`wallet's private key`** meaning you need to **`handle your private key locally`** on the computer from which you want to run this script on.
@@ -15,14 +14,14 @@ The script relies on many things - such as blockchain congestion, dropped networ
 1. A clean and secure computer/nuc/raspberry pi that can run 24/7.
 2. Minor programming knowledge
 
-## The My DiamondTeam v2
+## The Piston project
 
-The [MDVT](https://mydiamondteam.online/v2/?ref=0x361472b5784e83fbf779b015f75ea0722741f304) is a low risk, high reward contract that operates similar to a high yield 
+The [Piston](https://piston-token.com/ref/jacktz) is a low risk, high reward contract that operates similar to a high yield 
 certificate of deposit. You can participate by purchasing the token through these steps: 
-1. Go to [MDVT webpage](https://mydiamondteam.online/v2/?ref=0x361472b5784e83fbf779b015f75ea0722741f304) and deposit a minimum of 0.1 BNB 
+1. Go to [Piston](https://piston-token.com/ref/jacktz) and deposit piston into your Pit Crew.
 
-Everytime you re-invest your rewards, you earn a 5 bonus on the amount you re-invest. So in order to get the most of it, it is essential to re-invest every day. 
-The purpose of this code is to do this automatically for you so you don't have to. 
+In order to get the most out of your staked funds is to compound and claim with a strategy - for instance, compound 6 days in a row and claim 1, and then repeat.
+The purpose of this code is to do this automatically for you. 
 
 ## Setup
 
@@ -66,38 +65,38 @@ $ python -m pip install python-dotenv
 9. Copy the file `cycle_config.example.json` and save it as `cycle_config.json`. This file contains the definition of your strategy cycle.  [See the Cycle settings](#cycle-settings) on how to modify your cycle strategy.
 
 ## Cycle settings
-The script includes a cycle-manager. This means that you can determine a cycle on when to `reinvest` and when to `withdraw`.
+The script includes a cycle-manager. This means that you can determine a cycle on when to `roll` (compound/nitro) and when to `claim`.
 The file called `cycle_config.example.json` shows an example on how a cycle could look like.
 One cycle includes 4 inputs:
 - Id (1-indexed, meaning that the first cycle should always start with 1)
-- Type (either use `reinvest` or `withdraw`)
+- Type (either use `roll` or `claim`)
 - EndTimerAt (Specifies the time of day where the cycle ends. For example with "20:00" (8pm) or "08:00" (8am). You can set the time of day as you please. By adding two or more cycles, you can setup your strategy to run every 3rd day, 12h or all the way down to each minute)
-- MinimumPiston (you might be able to reinvest because 24h has past but you only want to reinvest, when you have a minimum BNB of this value)
+- MinimumPiston (you might be able to `roll` because 24h has past but you only want to `roll`, when you have a minimum Piston of this value)
 
 Each cycle is defined by one iteration. Set as many iterations you want - just make sure to increment the `Id` of each iteration. When the cycle ends, it starts again from the top.
 
-Defaults for each iteration in the example is set to `reinvest` and to execute every day at "20:00" (8pm).
+Defaults for each iteration in the example is set to `roll` and to execute every day at "20:00" (8pm).
 
 ### Persisted cycle settings
 Cycle settings from your `cycle_config.json` are persisted. This means that the `nextCycleId` property is updated at the end of every cycle and you cycle loop never changes, so if you ever have to restart the script your cycle will never lose state and it will start from where it left off.
 
 ## Usage
 
-In a terminal window, navigate to the location where you saved all the files. Run the `diamond_cycle.py` file.
+In a terminal window, navigate to the location where you saved all the files. Run the `race.py` file.
 
 ```bash
-$ python diamond_cycle.py
+$ python race.py
 ```
 
 This terminal window will always need to remain open for the script to function. If the terminal window closes, just execute
-`python diamond_cycle.py` again.
+`python race.py` again.
 
 # Donations
 If this script helps you, consider supporting me by sending an airdrop: 
 - **wallet:** *0x361472B5784e83fBF779b015f75ea0722741f304*
 
 Or using my referral code:
-- [My DiamondTeam v2](https://mydiamondteam.online/v2/?ref=0x361472b5784e83fbf779b015f75ea0722741f304)
+- [Piston](https://piston-token.com/ref/jacktz)
 
 
 # Other projects to take a look at:
@@ -106,3 +105,4 @@ Or using my referral code:
 - [Animal Farm, Garden](https://theanimal.farm/referrals/0x361472B5784e83fBF779b015f75ea0722741f304) - 3% per day, high risk, high reward! Get the [auto-script here](https://github.com/jacktripperz/planter)
 - [Baked Beans](https://bakedbeans.io?ref=0x361472B5784e83fBF779b015f75ea0722741f304) - 8% per day, high risk, high reward! Get the [auto-script here](https://github.com/jacktripperz/bakedbeans)
 - [BNB Miner](https://bnbminer.finance?ref=0x361472B5784e83fBF779b015f75ea0722741f304) - 3% per day, high risk, high reward! Get the [auto-script here](https://github.com/jacktripperz/bnbminer)
+- [My DiamondTeam v2](https://mydiamondteam.online/v2/?ref=0x361472b5784e83fbf779b015f75ea0722741f304) - 1.5% per day - low risk, high reward, no decay, 5% reinvest bonus! Get the [auto-script here](https://github.com/jacktripperz/diamond_team)
